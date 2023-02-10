@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Handler.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wcollen <wcollen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:24:49 by mlarra            #+#    #+#             */
-/*   Updated: 2023/02/09 11:45:03 by mlarra           ###   ########.fr       */
+/*   Updated: 2023/02/10 22:52:14 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,4 +218,16 @@ void	Handler::serverRun()
 			}
 		}
 	}
+}
+
+void  Handler::clean()
+{
+  delete _servers;
+
+  //можно так удалять
+  // for ( std::vector<Client *>::iterator it = _clients.begin() ; it != _clients.end() ; it++ )
+  //   delete *it;s
+
+  //а можно так
+  std::for_each( _clients.begin(), _clients.end(), std::default_delete<Client>() );
 }

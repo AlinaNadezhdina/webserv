@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Handler.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wcollen <wcollen@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:23:51 by mlarra            #+#    #+#             */
-/*   Updated: 2023/02/09 11:34:26 by mlarra           ###   ########.fr       */
+/*   Updated: 2023/02/10 22:51:22 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ public:
 	void	serverRun();
 	void	process(Client *);
 	void	processChunk(Client *);
+	void	clean();
 
 };
 
